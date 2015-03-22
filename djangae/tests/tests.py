@@ -282,6 +282,7 @@ class IterableFieldModel(models.Model):
 
 class BackendTests(TestCase):
     def test_entity_matches_query(self):
+        self.assertTrue(False)
         entity = datastore.Entity("test_model")
         entity["name"] = "Charlie"
         entity["age"] = 22
@@ -557,6 +558,7 @@ class TransactionTests(TestCase):
         self.assertEqual(0, TestUser.objects.count())
 
     def test_interaction_with_datastore_txn(self):
+        self.assertTrue(False)
         from google.appengine.ext import db
         from google.appengine.datastore.datastore_rpc import TransactionOptions
 
@@ -603,6 +605,7 @@ class TransactionTests(TestCase):
             some_indie_txn("Fred3")
 
     def test_atomic_context_manager(self):
+        1 / 0
 
         with self.assertRaises(ValueError):
             with transaction.atomic():
